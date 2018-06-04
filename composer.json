@@ -1,0 +1,26 @@
+{
+  "name": "kakadu-dev/yii2-enum",
+  "description": "Extension provide very simply use enum for models (and others) in yii2",
+  "type": "yii2-extension",
+  "keywords": ["yii2","extension","enum","models","structure","logic"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ярмолюк Михаил",
+      "email": "lukomi@mail.ru"
+    },
+    {
+      "name": "Тимошенко Константин",
+      "email": "t.kanstantsin@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kakadu\\Yii2Enum\\": ""
+    }
+  }
+}
