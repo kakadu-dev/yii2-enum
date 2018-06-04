@@ -44,7 +44,7 @@ UserStatus class example:
 namespace common\models\Users\Enum;
 
 use Yii;
-use Kakadu\Yii2Enum;
+use Kakadu\Yii2Enum\Enum;
 
 /**
  * Class    UserStatus
