@@ -9,7 +9,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist matthew-p/yii2-services "*"
+php composer.phar require --prefer-dist kakadu-dev/yii2-enum "@dev"
 ```
 
 or add
