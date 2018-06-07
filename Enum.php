@@ -69,7 +69,7 @@ abstract class Enum
      */
     public static function get($key): ?string
     {
-        $key = \is_object($key) ? $key->{self::$attribute} : $key;
+        $key = \is_object($key) ? $key->{static::$attribute} : $key;
 
         return static::all()[$key] ?? static::getDefault();
     }
