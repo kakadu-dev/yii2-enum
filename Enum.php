@@ -26,7 +26,7 @@ abstract class Enum
      *
      * @var string|NULL
      */
-    protected static $attribute = NULL;
+    protected static $attribute;
 
     /**
      * Get all items
