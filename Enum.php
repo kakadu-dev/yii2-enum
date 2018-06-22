@@ -119,10 +119,10 @@ abstract class Enum
     {
         if (\is_object($model)) {
             if ($attribute = static::$attribute) {
-                return \in_array($model->$attribute, $keys);
+                return \in_array($model->$attribute, $keys, false);
             }
         } else {
-            return \in_array($model, $keys);
+            return \in_array($model, $keys, false);
         }
 
         return false;
