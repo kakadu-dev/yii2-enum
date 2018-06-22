@@ -31,7 +31,7 @@ Create directory structure for model "User" (only example, not required):
 common/  
     models/    
         Users/  
-            Enum/
+            Enums/
                 UserStatus.php
             User.php
             UserQuery.php
@@ -41,14 +41,14 @@ UserStatus class example:
 ```php
 <?php
 
-namespace common\models\Users\Enum;
+namespace common\models\Users\Enums;
 
 use Yii;
 use Kakadu\Yii2Enum\Enum;
 
 /**
  * Class    UserStatus
- * @package common\models\Users\Enum
+ * @package common\models\Users\Enums
  * @author  
  * @version 1.0
  */
@@ -80,7 +80,7 @@ And use:
 ```php
 ...
 
-use common\models\Users\Enum\UserStatus;
+use common\models\Users\Enums\UserStatus;
 ...
 
 class User extends ActiveRecord implements IdentityInterface
