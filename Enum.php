@@ -19,7 +19,7 @@ abstract class Enum
      *
      * @var array
      */
-    protected static $notSetMessage = ['app', 'Не указано'];
+    protected static $notSetMessage = ['kkd-enum', 'Not set'];
 
     /**
      * Enum model attribute name

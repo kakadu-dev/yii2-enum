@@ -27,8 +27,8 @@ class YesNot extends Enum
     public static function all(): array
     {
         return [
-            self::YES => \Yii::t('app', 'Yes'),
-            self::NOT => \Yii::t('app', 'Not'),
+            self::YES => \Yii::t('kkd-enum', 'Yes'),
+            self::NOT => \Yii::t('kkd-enum', 'Not'),
         ];
     }
 }

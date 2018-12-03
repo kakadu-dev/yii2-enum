@@ -130,4 +130,13 @@ DetailView::widget([
 $form->field($model, 'status')->dropDownList(UserStatus::all())
 ```
 
+Add translation (e.g. in main.php):
+```php
+'i18n'           => [
+    'translations' => [
+        'kkd-enum*' => \Kakadu\Yii2Enum\EnumTranslation::getConfig(),
+    ],
+],
+```
+
 That's all. Check it.
