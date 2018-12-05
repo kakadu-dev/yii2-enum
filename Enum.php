@@ -26,7 +26,7 @@ abstract class Enum
      *
      * @var string|NULL
      */
-    protected static $attribute = NULL;
+    protected static $attribute;
 
     /**
      * Get all items
@@ -57,7 +57,7 @@ abstract class Enum
      */
     public static function keys(): array
     {
-        return array_keys(static::all());
+        return \array_keys(static::all());
     }
 
     /**
@@ -96,7 +96,7 @@ abstract class Enum
      */
     public static function has($model, $key): bool
     {
-        if (is_object($model)) {
+        if (\is_object($model)) {
             if ($attribute = static::$attribute) {
                 return $model->$attribute == $key;
             }
@@ -117,12 +117,12 @@ abstract class Enum
      */
     public static function hasIn($model, array $keys): bool
     {
-        if (is_object($model)) {
+        if (\is_object($model)) {
             if ($attribute = static::$attribute) {
-                return \in_array($model->$attribute, $keys);
+                return \in_array($model->$attribute, $keys, false);
             }
         } else {
-            return \in_array($model, $keys);
+            return \in_array($model, $keys, false);
         }
 
         return false;
