@@ -31,7 +31,7 @@ Create directory structure for model "User" (only example, not required):
 common/  
     models/    
         Users/  
-            Enum/
+            Enums/
                 UserStatus.php
             User.php
             UserQuery.php
@@ -41,30 +41,18 @@ UserStatus class example:
 ```php
 <?php
 
-namespace common\models\Users\Enum;
+namespace common\models\Users\Enums;
 
 use Yii;
 use Kakadu\Yii2Enum\Enum;
 
-/**
- * Class    UserStatus
- * @package common\models\Users\Enum
- * @author  
- * @version 1.0
- */
 class UserStatus extends Enum
 {
     const DELETED = 0;
     const ACTIVE  = 1;
 
-    /**
-     * @inheritdoc
-     */
     protected static $attribute = 'status';
 
-    /**
-     * @inheritdoc
-     */
     public static function all(): array
     {
         return [
@@ -78,26 +66,19 @@ class UserStatus extends Enum
 And use:
 
 ```php
-...
+namespace common\models\Users;
 
-use common\models\Users\Enum\UserStatus;
-...
+use common\models\Users\Enums\UserStatus;
 
-class User extends ActiveRecord implements IdentityInterface
+class User extends ActiveRecord
 {
-    ...
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['status', 'default', 'value' => UserStatus::ACTIVE],
             ['status', 'in', 'range' => UserStatus::keys()],
         ];
     }
-    
     ...
 }
 ```
@@ -107,7 +88,7 @@ More examples:
 $model = new User(['status' => UserStatus::ACTIVE]);
 
 if (UserStatus::has($model, UserStatus::ACTIVE)) {
-    //
+    // do something
 }
 
 // DetailView widget (or GridView)
@@ -118,7 +99,6 @@ DetailView::widget([
         'name',
         [
             'attribute' => 'status',
-            'format'    => 'raw',
             'filter'    => UserStatus::all(),
             'value'     => UserStatus::get($model->status),
         ],
